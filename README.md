@@ -35,6 +35,7 @@ This document focuses on Rails 5.2.
         - [File Downloads](#file-downloads)
     - [Cross-Site Request Forgery (CSRF)](#cross-site-request-forgery-csrf)
     - [Cross Origin Resource Sharing (CORS)](#cross-origin-resource-sharing-cors)
+    - [Encryption & Hashing](#encryption-and-hashing)
     - [Sensitive Data Exposure](#sensitive-data-exposure)
         - [Credentials](#credentials)
     - [Routing, Template Selection, and Redirection](#routing-template-selection-and-redirection)
@@ -363,6 +364,12 @@ configuration ([code sample](#rack-cors-configuration)).
 
 Resources:
 - [Security issues solutions in RoR](https://syndicode.com/2017/10/23/security-issues-solutions-in-ror/)
+
+#### Encryption & Hashing
+- Always use the most up-to-date encryption algorithms for encrypting data. Use a salt and IV when possible.
+Currently we require AES-256 at a minimum.
+- When decryption is not required use hashing to protect data. Bcrypt,
+and SHA-256 are the currently required minimums.
 
 #### Sensitive Data Exposure
 - Avoid storing sensitive data such as credit cards, tax IDs
