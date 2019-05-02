@@ -68,6 +68,7 @@ methods](http://api.rubyonrails.org/classes/ActiveRecord/Sanitization/ClassMetho
 to sanitize user input used in DB queries. Another basic example:
 `User.where(email: params[:email])` is safe,
 `User.where("email = #{params[:email]}")` is not safe.
+Refer to [this resource](https://rails-sqli.org/) for a deeper dive into SQL injection exploits.
 *Mitigates SQL injection attacks.*
 - Don't pass user inputted strings to methods capable of evaluating
 code or running O.S. commands such as `eval`, `system`, `syscall`, `%x()`,
